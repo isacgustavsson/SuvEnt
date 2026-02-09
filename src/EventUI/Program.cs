@@ -1,3 +1,4 @@
+using EventCore.Interfaces;
 using EventInfrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,8 @@ builder.Services.AddDbContext<EventDbContext>(options =>
 {
     options.UseSqlite(@"Data Source=event.db");
 });
+
+builder.Services.AddScoped<IEventRepository, EventRepository>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
