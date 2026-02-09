@@ -11,31 +11,37 @@
     <div class="row">
         <label asp-for="Name" class="text-start"></label>
         <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div class="row">
         <label asp-for="Description" class="text-start"></label>
         <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
     </div>
 
     <div class="row">
         <label asp-for="StartDateTime" class="text-start"></label>
         <input asp-for="StartDateTime" class="form-control" />
+        <span asp-validation-for="StartDateTime" class="text-danger"></span>
     </div>
 
     <div class="row">
         <label asp-for="EndDateTime" class="text-start"></label>
         <input asp-for="EndDateTime" class="form-control" />
+        <span asp-validation-for="EndDateTime" class="text-danger"></span>
     </div>
 
     <div class="row">
         <label asp-for="Location" class="text-start"></label>
         <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
     </div>
 
     <div class="row">
         <label asp-for="MaxParticipants" class="text-start"></label>
         <input asp-for="MaxParticipants" class="form-control" />
+        <span asp-validation-for="MaxParticipants" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary mt-2">Register</button>
