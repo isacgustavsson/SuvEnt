@@ -5,11 +5,11 @@ namespace EventUI.Models;
 public class CreateEventViewModel
 {
     [Required]
-    [StringLength(3, MinimumLength = 1, ErrorMessage = "Name must be between 1-3 characters long.")]
+    [StringLength(35, MinimumLength = 2, ErrorMessage = "Name must be between 2-35 characters long.")]
     public string Name { get; set; } = string.Empty;
 
     [Required]
-    [MinLength(15, ErrorMessage = "Description must be at least 15 ju ,characters long")]
+    [MinLength(1, ErrorMessage = "Description must be at least 1 characters long")]
     public string Description { get; set; } = string.Empty;
 
     [Required]
