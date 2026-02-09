@@ -12,7 +12,21 @@ public class EventController(IEventRepository repo) : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var events = _repo.GetAll();
+
+        var model = events.Select(e => new EventListViewModel
+        (
+            e.Id,
+            e.Name,
+            e.Description,
+            e.StartDateTime,
+            e.EndDateTime,
+            e.Location,
+            e.MaxParticipants,
+            e.Registrations.Count
+        ));
+
+        return View(model);
     }
 
     [HttpGet]
