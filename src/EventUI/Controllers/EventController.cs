@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using EventCore.DTOs;
+using EventUI.Models;
 using EventCore.Interfaces;
 using EventCore.Entities;
 
@@ -15,25 +15,26 @@ public class EventController(IEventRepository repo) : Controller
         return View();
     }
 
-    public IActionResult Create(CreateEventDto dto)
+    [HttpPost]
+    public IActionResult Create(CreateEventViewModel model)
     {
         if (!ModelState.IsValid)
         {
-            return View(dto);
+            return View(model);
         }
 
         Event eventToAdd = new
         (
-            dto.Name,
-            dto.Description,
-            dto.StartDateTime,
-            dto.EndDateTime,
-            dto.Location,
-            dto.MaxParticipants
+            model.Name,
+            model.Description,
+            model.StartDateTime,
+            model.EndDateTime,
+            model.Location,
+            model.MaxParticipants
         );
 
         _repo.Add(eventToAdd);
 
-        return View();
+        return RedirectToAction("Index");
     }
 }
