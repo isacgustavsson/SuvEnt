@@ -4,19 +4,26 @@
     ViewData["Title"] = "Event List";
 }
 
-<h1 class="display-4">Events</h1>
+<h1 class="display-4 text-center">Events</h1>
 
-<div class="container"></div>
+
 @foreach (var item in Model)
 {
-    <div class="row">
-        <h4>@item.Name</h4>
-        <p>@item.Description</p>
-        <p>@item.StartDateTime</p>
-        <p>@item.EndDateTime</p>
-        <p>@item.Location</p>
-        <p>@item.RegistrationCount</p>
+
+    <div class="card mb-4" style="width: inherit;">
+        <div class="card-body">
+            <h4 class="card-title"><strong>@item.Name</strong></h4>
+            <p class="card-text">@item.Description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Starts:</strong> @item.StartDateTime</li>
+            <li class="list-group-item"><strong>Ends:</strong> @item.EndDateTime</li>
+            <li class="list-group-item"><strong>Location:</strong> @item.Location</li>
+            <li class="list-group-item"><strong>Registered:</strong> @item.RegistrationCount</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
     </div>
 }
-<div class="row">
-</div>
