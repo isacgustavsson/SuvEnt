@@ -3,6 +3,11 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# VS for Mac build helper folders
+**/BuildHost*/
+
+*.db
+
 # dotenv files
 .env
 
