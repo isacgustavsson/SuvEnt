@@ -1,7 +1,22 @@
+@model IEnumerable<EventListViewModel>
+
 @{
-    ViewData["Title"] = "Event Page";
+    ViewData["Title"] = "Event List";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Events</h1>
+<h1 class="display-4">Events</h1>
+
+<div class="container"></div>
+@foreach (var item in Model)
+{
+    <div class="row">
+        <h4>@item.Name</h4>
+        <p>@item.Description</p>
+        <p>@item.StartDateTime</p>
+        <p>@item.EndDateTime</p>
+        <p>@item.Location</p>
+        <p>@item.RegistrationCount</p>
+    </div>
+}
+<div class="row">
 </div>
