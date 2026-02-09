@@ -1,0 +1,42 @@
+@model EventUI.Models.CreateEventViewModel;
+
+@{
+    ViewData["Title"] = "Create Event Page";
+}
+
+<h1 class="display-4">Create New Event</h1>
+
+<form asp-controller="Event" asp-action="Create" method="post">
+
+    <div class="row">
+        <label asp-for="Name" class="text-start"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="row">
+        <label asp-for="Description" class="text-start"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+
+    <div class="row">
+        <label asp-for="StartDateTime" class="text-start"></label>
+        <input asp-for="StartDateTime" class="form-control" />
+    </div>
+
+    <div class="row">
+        <label asp-for="EndDateTime" class="text-start"></label>
+        <input asp-for="EndDateTime" class="form-control" />
+    </div>
+
+    <div class="row">
+        <label asp-for="Location" class="text-start"></label>
+        <input asp-for="Location" class="form-control" />
+    </div>
+
+    <div class="row">
+        <label asp-for="MaxParticipants" class="text-start"></label>
+        <input asp-for="MaxParticipants" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Register</button>
+</form>
