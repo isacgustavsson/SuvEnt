@@ -15,6 +15,12 @@ public class EventController(IEventRepository repo) : Controller
         return View();
     }
 
+    [HttpGet]
+    public IActionResult Create()
+    {
+        return View(new CreateEventViewModel());
+    }
+
     [HttpPost]
     public IActionResult Create(CreateEventViewModel model)
     {
